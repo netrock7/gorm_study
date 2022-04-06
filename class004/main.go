@@ -27,7 +27,7 @@ func main() {
 	sqlDB.SetConnMaxLifetime(time.Hour) //	连接池中连接的最大可复用时间
 	GLOBAL_DB = db
 	//fmt.Println(db)
-	TestUserCreate()
-
-	CreatedTest()
+	//TestUserCreate()
+	//CreatedTest()
+	TestFind()
 }
