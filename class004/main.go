@@ -1,17 +1,19 @@
 package main
 
 import (
+	"time"
+
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"time"
 )
 
 var GLOBAL_DB *gorm.DB
 
 func main() {
 	db, _ := gorm.Open(mysql.New(mysql.Config{
-		DSN:               "admin_wr:HjA86jqgm9mZ@tcp(localhost:3306)/gorm_class?charset=utf8&parseTime=True&loc=Local", // DSN data source name
-		DefaultStringSize: 256,                                                                                          // string 类型字段的默认长度
+		// DSN:               "admin_wr:HjA86jqgm9mZ@tcp(localhost:3306)/gorm_class?charset=utf8&parseTime=True&loc=Local", // 本地数据库配置
+		DSN:               "go:ha9nD784yO7MFB@tcp(10.38.1.12:3306)/gorm_class?charset=utf8&parseTime=True&loc=Local", // 云数据库配置
+		DefaultStringSize: 256,                                                                                       // string 类型字段的默认长度
 	}), &gorm.Config{
 		SkipDefaultTransaction: false,
 		//NamingStrategy: schema.NamingStrategy{

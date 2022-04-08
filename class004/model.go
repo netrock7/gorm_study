@@ -3,7 +3,7 @@ package main
 import "time"
 
 type Model struct {
-	UUID uint `gorm:"primaryKey""`
+	UUID uint `gorm:"primaryKey"`
 	//Time time.Time `gorm:"column:my_time"`
 }
 
